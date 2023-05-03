@@ -10,11 +10,11 @@ def is_matched(expr):
 
     for c in expr:
         if c in lefty:
-            stack.push(c)
+            stack.push(c) #Pushing left delimeter
         elif c in righty:
-            if stack.isEmpty():
+            if stack.isEmpty(): #if the stack is empty a mismatch of delimeter happened and returns false
                 return False
-            if righty.index(c) != lefty.index(stack.pop()):
+            if righty.index(c) != lefty.index(stack.pop()): #if indices of righty and lefty elements do not match return false
                 return False
     
     return stack.isEmpty()
