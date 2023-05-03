@@ -1,6 +1,6 @@
 """Function for the sum of 2 lists with the same size"""
 def sum(list1, list2):
-    total=[[0] * len(list1) for j in range(len(list1[0]))]
+    total=[[0] * len(list1) for _ in range(len(list1[0]))]
     if len(list1) == len(list2) and len(list1[0]) == len(list2[0]):
         for i in range(len(list2)):
             for j in range(len(list2[0])):

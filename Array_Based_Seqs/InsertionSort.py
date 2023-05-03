@@ -9,7 +9,7 @@ def insertion_Sort(A):
         #while A[j-1] > than curr (A[j]) we swap leftwards until A[j-1] <curr
         while j >0 and A[j-1]>curr: #element A[j-1] must be after current
             A[j]=A[j-1]
-            j-=1 #current index that was swapped that will hold the current element we used for comparison 
+            j-=1 #current element that was swapped that will hold the current element we used for comparison 
         A[j]=curr #current goes now to the right index
         #And we iterate the loop with again with the next kth element.
     
