@@ -1,5 +1,5 @@
 """This code reverses the lines of a file from its original order"""
-from Stacks_Queues_Dequeues import Stack
+from StackClass import Stack
 def reverse_file(filename):
     """Overwrite given file with its contents line by line reversed"""
     S= Stack()

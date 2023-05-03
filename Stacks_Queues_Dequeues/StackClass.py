@@ -43,12 +43,12 @@ class Stack:
         else:
             raise IndexError("Stack is empty")    
     
-stack = Stack()
+# stack = Stack()
 
-stack.push(3)
-print(stack.isEmpty())
-stack.print()
-print(stack.top())
-stack.pop()
-print(stack.isEmpty())
-stack.print()
+# stack.push(3)
+# print(stack.isEmpty())
+# stack.print()
+# print(stack.top())
+# stack.pop()
+# print(stack.isEmpty())
+# stack.print()
