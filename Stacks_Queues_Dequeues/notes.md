@@ -5,3 +5,9 @@
 > *STACK* is an ADT (abstract data type)
 
 > As a consequence of the LIFO protocol, a stack can be used as a general tool to reverse a data sequence.
+
+
+# Queues 
+
+> *Queues* is a collection of objects that is inserted and and removed according to FIFO (First in First out) like a DMV line.
+
