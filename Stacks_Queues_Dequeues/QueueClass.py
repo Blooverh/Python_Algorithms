@@ -27,6 +27,8 @@ class Queue:
         if self.isEmpty():
             raise Empty('Queue is empty')
         
+        return self._data[self._front] #returns the element at positions front which is 0 (first position)
+        
     def dequeue(self):
         """remove the object in front of the queue"""
         """Raise exception if Queue is empty"""
