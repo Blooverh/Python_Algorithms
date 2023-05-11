@@ -8,3 +8,5 @@
 > Collection of nodes that collectively form a linear sequence. Each node stores a reference to an object that is an element of the sequence, as well as a reference to the next node in the list
 
 >NOTE: Optional[ListNode] is a type hint in Python that indicates that a function or variable can have a value of either ListNode or None. It is used to provide type information to static type checkers and linters, and can also make it easier for developers to understand the code.
+
+> __slots__ -> is a class variable that is usually assigned a sequence of strings that are variable names used by instances
