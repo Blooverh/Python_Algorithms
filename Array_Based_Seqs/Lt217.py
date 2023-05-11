@@ -10,8 +10,7 @@ when a number in the original array already exists in the copy set return true e
 We Use a set because SETS CANNOT CONTAIN DUPLICATE ELEMENTS AND USE HASHING TO PERFORM THE LOOKUPS
 RATHER THAN PERFORMING LINEAR LOOKUP, SO CHANCES OF FINDING DUPLICATES FASTER IS HIGHER
 
-NOTE: if we sort the list we increase the chance of faster look up rather than the set because the set 
-takes more memory due to space complexity
+NOTE: if we sort onto the original list we decrease the space complexity but algorithm slower
 """
 
 class Solution:
