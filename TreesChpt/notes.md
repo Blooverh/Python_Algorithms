@@ -26,4 +26,4 @@
 > Rules: 
 >> every node has at most 2 children
 >> each child node is labeled as being a left or right child
->> a left child precedes a right child in the order of childre of a node.
+>> a left child precedes a right child in the order of children of a node.
