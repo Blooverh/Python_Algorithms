@@ -27,3 +27,37 @@
 >> every node has at most 2 children
 >> each child node is labeled as being a left or right child
 >> a left child precedes a right child in the order of children of a node.
+
+## Binary Tree traversal algorithms 
+> preorder -> root is visited first, then the substrees rooted at its children are traversed recursively
+>> Algorithm: 
+    preorder( T, p):
+        perform the visit action for position p
+        for each child (C) in T.Children(p) do
+            preorder(T, c)
+
+> Postorder traversal => recursively traverses the subtress rooted at the children of the root first and then visits the root, thus root will be last node to be visited.
+
+> Overall running of both this algorithms is O(n) meaning it increases linearly based on the number of inputs the tree contains.
+
+> Breadth First Traversal => Non recursive process for traversing the tree, we use a QUEUE to produce a FIFO semantics for the order in which we visit the nodes. Overall running time is O(n), due to the n calls to enqueue and n calls to dequeue as we keep nodes in queue to process the visit of such trees.
+>> Algorithm: 
+    Initialize queue Q to contain the T.root()
+    while Q != empty do
+        p= Q.dequeue() => p is the oldest entry in the queue meaning the position of the root node at the start
+        perform the visit action for position p
+        for each child c in T.children(p) do
+            Q.enqueue(c) -> add p's children to the end of the queue for later visits 
+
+> In order traversal -> We visit a position between the recursive traversals of its left and right subtrees. We can think of it as visiting  the nodes from left to right starting from the last level (depth) of the entire tree. For every position p the inorder traversal visits p after all the positions in the left subtree of the p and before all the positions in the right subtree of p.
+>> Algorithm: inorder(p):
+
+    if p has left child lc then
+        inorder(lc) => recursive traverse the left sub tree of p
+    
+    perform the visit action for position p
+
+    if p has a right child rc then 
+        inorder(rc) => recursive traverse the right subtree of p
+
+# Binary Search Trees
