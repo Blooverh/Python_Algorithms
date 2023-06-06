@@ -6,7 +6,7 @@
 
 > Relationships in trees are hierarchical, with objects being above or below other objects.
 
-> We define a tree T as a set of nodes storing elements such as th nodes have a parent-child relationship 
+> We define a tree T as a set of nodes storing elements such as the nodes have a parent-child relationship 
 >> If T is non-empty, it has a special node called the root of T, that has no parent.
 >> Each node v of T is different from the root and has a unique parent node w, every node with parent w is a *child* of w.
 
@@ -20,6 +20,15 @@
 
 ## TREE ADT (ABSTRACT DATA TYPE)
 > we defin a Tree ADT using the concept of a position as an abstraction for a node of a tree. An element is stored at each position, and positions satisfy parent-child relationships that define the TREE structure.
+
+## Computing depth and height of a Tree 
+> let p be the position of a node of tree T. The *depth* of p is the number of ancestors of p *Excluding* p itself. Example, the root of a tree T has depth 0, other wise the depth of p is 1+ the depth of the parent of p.
+
+> Depth running time is O(depth of p + 1), where depth  of p is based of p to the root. Because the algorithms performs in contant time recursively for each ancestor of p. Thus algorithm runs in O(n) in the worst case where n is the total number of positions of T because a position of T may have depth n-1 (since root is depth level 0) if all nodes form a single branch.
+
+> height is the number of edges to its most distant leaf node, thus if p is a leaf, height = 0 
+
+> *depth is the number of edges back up to the root, thus root always has a depth of 0 while leaf nodes always have a height of 0! depth and height are both the root height!!*
 
 # BINARY TREE
 
