@@ -49,7 +49,7 @@
         for each child c in T.children(p) do
             Q.enqueue(c) -> add p's children to the end of the queue for later visits 
 
-> In order traversal -> We visit a position between the recursive traversals of its left and right subtrees. We can think of it as visiting  the nodes from left to right starting from the last level (depth) of the entire tree. For every position p the inorder traversal visits p after all the positions in the left subtree of the p and before all the positions in the right subtree of p.
+> In order traversal -> We visit a position between the recursive traversals of its left and right subtrees. We can think of it as visiting the nodes from left to right starting from the last level (depth) of the entire tree. For every position p the inorder traversal visits p after all the positions in the left subtree of the p and before all the positions in the right subtree of p.
 >> Algorithm: inorder(p):
 
     if p has left child lc then
@@ -61,3 +61,10 @@
         inorder(rc) => recursive traverse the right subtree of p
 
 # Binary Search Trees
+> binary tree is a tree that can be traversed with inorder traversal algorithm since we store the elements in an ordered sequence. We visit each node from left to right in the subtree since right subtree has higher values that its parents and left subtree has lower values than its parents.
+
+> Let S be a set (set is a structure that contains all unique numbers, meaning no repeat elements). For example we can use a binary seatch tree T for a set S to find whether a given search value v is in set S by traversing a path down the tree T, starting at the root. If a value v < element(position) search continues on the left subtree, if value v > element(position) then we traverse on the right of the subtree.
+
+> The running time of searching in a binary tree T is propotional to the height of T.
+
+> All traversal algorithms for binary trees (preorder, postorder, breadth first and inorder) can be used to traverse a binary search tree.
