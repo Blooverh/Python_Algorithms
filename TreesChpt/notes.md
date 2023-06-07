@@ -50,7 +50,21 @@
 
 > Thus a node in a binary tree will have a parent, a left child, a right child and a value reference, we can see it in a similar way as a linked list 
 
+## Performance of a linked Binary Tree Implementation
 
+> len method runs in O(1) as we use an instance variable storing the number of node of T, is_empty relies on one call from len 
+
+> accessor methods take O(1), sibling and children methods are derived from Binary Tree class on constant number of calls to these other acessors so they run on O(1)
+
+>depth is O(depth of p +1)
+
+>height = O(n) since leafs are place in positions with no children hence being on the last level of the tree
+
+## Array Based representation of a binary Tree
+
+> if p is root of T, then position of p is 0
+> if p is left child of position q, then position p is 2 * q + 1
+> if p is right of position q then position o is 2 * q + 2
 
 ## Binary Tree traversal algorithms 
 > preorder -> root is visited first, then the substrees rooted at its children are traversed recursively
