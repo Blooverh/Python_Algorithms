@@ -37,6 +37,21 @@
 >> each child node is labeled as being a left or right child
 >> a left child precedes a right child in the order of children of a node.
 
+## Arithmatic Binary tree example: 
+
+> if a node is leaf then its value is a variable or a constant
+> if a node is internal, then its value is defined by applying its operation to the values of the children
+
+## relation between internal and external nodes 
+> external nodes = internal nodes + 1
+
+## Linked strucutre for binary trees 
+> A natural way to realize a binary tree is to use linked structures, with a node that maintains references to the element stored at a position p and to the nodes associated with the children of parent p. Example *if p is the root of T, then parent field of p is None*
+
+> Thus a node in a binary tree will have a parent, a left child, a right child and a value reference, we can see it in a similar way as a linked list 
+
+
+
 ## Binary Tree traversal algorithms 
 > preorder -> root is visited first, then the substrees rooted at its children are traversed recursively
 >> Algorithm: 
