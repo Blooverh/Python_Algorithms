@@ -79,3 +79,45 @@ class Tree:
             p=self.root()
         
         return self._height2(p)
+    
+    # we rely on python's generator syntax as the mechanism for producing iteartions
+    def __iter__(self):
+        """Generate an iteration of the tree's elements"""
+        for p in self.positions(): #use same order as positions()
+            yield p.element() #yield each element 
+
+    """To implemented the position methods we have a choice of tree traversal algorithms"""
+    
+    # Preorder 
+    def preorder(self):
+        """Generate a preorder iteration of positions in the tree"""
+        if not self.is_empty():
+            for p in self._subtree_preorder(self.root()): # start recursion
+                yield p 
+
+    #recurisve method 
+    def _subtree_preorder(self, p):
+        """generate a preorder iteration  of positions in subtree rooted at p"""
+        yield p # visit p before its subtrees 
+
+        for c in self.children(p): # for each child c from parent p
+            for other in self._subtree_preorder(c): #do preorder of c's subtree 
+                yield other #yielding each to our function caller 
+
+    def positions(self):
+        """Generate an iteration of the tree's positions"""
+        return self.preorder() # return entire preorder iteration
+    
+    # POSTORDER 
+    def postorder(self):
+        """generate post order algorithm, iteration of positions in the tree"""
+        if not self.is_empty():
+            for p in self._subtree_postorder(self.root()):
+                yield p
+    
+    def _subtree_postorder(self, p):
+        """generate postorder iteration of positions in subtree rooted at p """
+        for c in self.children(p): # for each child c 
+            for other in self._subtree_postorder(c): # do post order of c's subtree
+                yield other #yielding each to our caller 
+            yield p # visit p after its subtrees 

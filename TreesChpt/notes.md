@@ -67,7 +67,9 @@
 > if p is right of position q then position o is 2 * q + 2
 
 ## Binary Tree traversal algorithms 
-> preorder -> root is visited first, then the substrees rooted at its children are traversed recursively
+> *preorder* -> root is visited first, then the substrees rooted at the roots children are traversed recursively. If the tree is ordered, then suubtrees are traversed according to the order of the children.
+
+> We start at the root and mover traversly to the next node which is the ordered child of the root if binary tree is ordered.
 >> Algorithm: 
     preorder( T, p):
         perform the visit action for position p
@@ -75,10 +77,15 @@
             preorder(T, c)
 
 > Postorder traversal => recursively traverses the subtress rooted at the children of the root first and then visits the root, thus root will be last node to be visited.
+>> we start from the left most child of root and traverse the entire tree until we reach the root node.
+>> Algorithm:
+    postorder(T, p):
+        for each child c in T.children(p) do 
+            postorder(T, c) *recursively traverse the subtree rooted at c 
 
 > Overall running of both this algorithms is O(n) meaning it increases linearly based on the number of inputs the tree contains.
 
-> Breadth First Traversal => Non recursive process for traversing the tree, we use a QUEUE to produce a FIFO semantics for the order in which we visit the nodes. Overall running time is O(n), due to the n calls to enqueue and n calls to dequeue as we keep nodes in queue to process the visit of such trees.
+> Breadth First Traversal => Non recursive process for traversing the tree, we use a QUEUE to produce a FIFO semantics for the order in which we visit the nodes. Overall running time is O(n), due to the n calls to enqueue and n calls to dequeue as we keep nodes in queue to process the visit of such trees. We start from the root then read from left to right for each level of the tree
 >> Algorithm: 
     Initialize queue Q to contain the T.root()
     while Q != empty do
@@ -87,7 +94,7 @@
         for each child c in T.children(p) do
             Q.enqueue(c) -> add p's children to the end of the queue for later visits 
 
-> In order traversal -> We visit a position between the recursive traversals of its left and right subtrees. We can think of it as visiting the nodes from left to right starting from the last level (depth) of the entire tree. For every position p the inorder traversal visits p after all the positions in the left subtree of the p and before all the positions in the right subtree of p.
+> Inorder traversal -> We visit a position between the recursive traversals of its left and right subtrees. We can think of it as visiting the nodes from left to right starting from the last level (depth) of the entire tree. For every position p the inorder traversal visits p after all the positions in the left subtree of the p and before all the positions in the right subtree of p.
 >> Algorithm: inorder(p):
 
     if p has left child lc then
