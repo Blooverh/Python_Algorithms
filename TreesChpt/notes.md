@@ -113,3 +113,6 @@
 > The running time of searching in a binary tree T is propotional to the height of T.
 
 > All traversal algorithms for binary trees (preorder, postorder, breadth first and inorder) can be used to traverse a binary search tree.
+
+## preorder traversal 
+> recrusive algorithm for generating a preorder traversal, as originally described, must be parametized by a specific position within the tree that serves as the root of a subtree to traverse 
