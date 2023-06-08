@@ -40,4 +40,23 @@ class BinaryTree(Tree):
         if self.right(p) is not None:
             yield self.right(p)
 
-    
+    # SINCE INORDER TRAVERSAL IS ONLY FOR BINARY TREES, WE INCLUDE METHOD HERE 
+    def inorder(self):
+        """Generate an inorder iterations of positions in the tree"""
+        if not self.is_empty():
+            for p in self._subtree_inorder(self.root()):
+                yield p
+
+    def _subtree_inorder(self, p):
+        if self.left(p) is not None:
+            for other in self._subtree_inorder(self.left(p)):
+                yield other 
+
+        if self.right(p) is not None:
+            for other in self._subtree_inorder(self.right(p)):
+                yield other
+
+    # overriding positions methods for Binary tree class using inorder algorithm which is specific for BT
+    def positions(self):
+
+        return self.inorder()

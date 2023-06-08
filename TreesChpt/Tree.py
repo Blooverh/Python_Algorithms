@@ -1,3 +1,5 @@
+from LinkedLists import QueueLinkedList 
+
 class Tree:
     """Abstract base class representing a tree struct."""
 
@@ -121,3 +123,18 @@ class Tree:
             for other in self._subtree_postorder(c): # do post order of c's subtree
                 yield other #yielding each to our caller 
             yield p # visit p after its subtrees 
+
+    # BREADTH TRAVERSAL 
+    def breadthfirst(self):
+        """Generate a BFS iteration of the positions of the tree"""
+        if not self.is_empty():
+            fringe= QueueLinkedList() #know positions not yet yielded 
+            fringe.enqueue(self.root()) # start with the root 
+
+            while not fringe.is_empty(): # while queue is not empty 
+                p = fringe.dequeue() # assign p to dequeued element from the queue which at the start is the root 
+                yield p #yield p
+                for c in self.children(p): #check both children of p and queue them to Queue to be iterated next 
+                    fringe.enqueue(c)
+
+    
