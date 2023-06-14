@@ -16,14 +16,12 @@ class Solution:
         if not root or root == p or root == q: #if root is none or is equal to p or q return the root
             return root
 
-        l = self.lowestCommonAncestor(root.left, p, q) 
-        r = self.lowestCommonAncestor(root.right, p, q)
+        l = self.lowestCommonAncestor(root.left, p, q) #recursion to left child of each subroot
+        r = self.lowestCommonAncestor(root.right, p, q) #recursion to rigth child of each subroot
 
-        # check if both recursion return the node if p or q is equal to that node
-        # if for both subtrees it returns the nodes then we return the root, because the recursion call value is the same
-        # if p and q are in different subtrees 
-        if l and r:
+        # if subroot of l is p and subroot of r is q then return current root of the recursion
+        if l and r: 
             return root
         
-        #else return the node that its descendent of itself 
+        # case for if a tree node is descendent of itself
         return l or r
