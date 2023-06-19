@@ -16,7 +16,7 @@ class Solution:
             mid=(low + high) //2
 
             if nums[mid] > target:
-                high =  mid - 1
+                high =  mid
             elif nums[mid] == target:
                 return mid
             elif nums[mid] < target:
