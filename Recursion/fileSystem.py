@@ -13,4 +13,4 @@ def disk_usage(path):
     print('{0:7}'.format(total), path)
     return total
 
-disk_usage('C:/Users/diogo/OneDrive/Desktop/Python_Algorithms/Recursion')
+disk_usage(path)
