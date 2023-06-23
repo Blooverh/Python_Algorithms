@@ -8,3 +8,4 @@ def product(m,n):
     return m + product(m, n-1) # recursive call  
 
 print(product(10,10))
+
