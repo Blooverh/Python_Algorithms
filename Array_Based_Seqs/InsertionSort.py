@@ -3,7 +3,7 @@ for an unordered list."""
 def insertion_sort(A):
 # sort list of comparable elements into a non decreasing order
 
-    for k in range(1, len(A)) # we start from 1 as 1st element (at index 0) is seen as sorted
+    for k in range(1, len(A)): # we start from 1 as 1st element (at index 0) is seen as sorted
         curr= A[k] # current stores value of element k to be inserted in correct position
         curr_idx = k # j stores current index
     
