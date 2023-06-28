@@ -1,44 +1,44 @@
 from queue import Empty
 
-class Dequeue:
+class Deque:
     """Double ended queue can insert and delete at end and front of the queue"""
 
     DEFAULT_CAPACITY=10 #moderated capacity for all new QUEUES 
 
     def __init__(self):
         """create empty double ended queue"""
-        self._data=[None] * Dequeue.DEFAULT_CAPACITY 
+        self._data=[None] * Deque.DEFAULT_CAPACITY 
         self._size=0
         self._front=0
 
     def __len__(self):
-        """Return number of elements in the Dequeue and not the default capacity"""
+        """Return number of elements in the Deque and not the default capacity"""
         return self._size
     
     def isEmpty(self):
-        """Returns whether the Dequeue is empty or has elements"""
+        """Returns whether the Deque is empty or has elements"""
         return self._size ==0
     
     def first(self):
-        """Return but not remove element at the front of the Dequeue
+        """Return but not remove element at the front of the Deque
         if queue is not empty"""
 
-        #if dequeue is empty raise exception error
+        #if Deque is empty raise exception error
         if self.isEmpty():
-            raise Empty("Dequeue is empty")
+            raise Empty("Deque is empty")
 
         #returns element at front position
         return self._data[self._front]
     
     def last(self):
-        """Return element at beggining of the Dequeue"""
+        """Return element at beggining of the Deque"""
         return self._data[(self._front + self._size - 1)%len(self._data)]
     
-    def dequeue_front(self):
-        """Remove object at the front of the Dequeue"""
+    def Deque_front(self):
+        """Remove object at the front of the Deque"""
 
         if self.isEmpty():
-            raise Empty("Dequeue is empty")
+            raise Empty("Deque is empty")
 
         answer= self._data[self._front] # removes the front object from the queue
         self._data[self._front] = None # assigns None at that position for garbage collection since we are moving rightward the queue as a circular list 
@@ -47,17 +47,17 @@ class Dequeue:
 
         return answer
     
-    def dequeue_last(self):
-        """Remove object at the back of the Dequeue"""
+    def Deque_last(self):
+        """Remove object at the back of the Deque"""
 
         if self.isEmpty():
-            raise Empty("Dequeue is empty")
+            raise Empty("Deque is empty")
         
         back_element= self._data[self._size()]
-        answer= self._data[back_element] # removes the bacl object from the dequeue
+        answer= self._data[back_element] # removes the bacl object from the Deque
         self._data[back_element] = None # assigns None at that position for garbage collection since we are moving rightward the queue as a circular list 
         back_element= (self._front + self._size - 1) % len(self._data) #back object now becomes the next index based on modulus due to circular list 
-        self._size -= 1 #decrease size of the DeQueue by 1 
+        self._size -= 1 #decrease size of the Deque by 1 
 
         return answer
     
@@ -72,7 +72,7 @@ class Dequeue:
 
     def enqueue_front(self,e):
         if self._size == self.DEFAULT_CAPACITY:
-            self._dequeue_last()
+            self._Deque_last()
 
         self._front = (self._front-1) % len(self._data)
         self._data[self._front]=e
