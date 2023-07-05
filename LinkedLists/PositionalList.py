@@ -15,7 +15,6 @@ class PositionalList(DoublyLinkedList):
 
         def element(self):
             """Return element stored a this position"""
-
             return self._node._element
         
         def __eq__(self, other):

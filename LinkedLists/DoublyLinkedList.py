@@ -1,5 +1,5 @@
 class DoublyLinkedList:
-
+    """Base class for providing a doubly linked list representation"""
     class _Node:
         __slots__='_element','_prev','_next'
 
