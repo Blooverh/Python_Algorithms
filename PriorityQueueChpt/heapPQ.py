@@ -47,8 +47,17 @@ class Heap(PriorityQueue):
 
     ### Public Methods Behaviors ###
 
-    def __init__(self):
-        self._data=[]
+    def __init__(self, contents=()):
+        # self._data=[] no bottom-up heapify heap implementation
+        """below implementation is for the bottom-up heap construction""" 
+        self._data=[self._Item(k,v) for k,v in contents]
+        if len(self._data) > 1:
+            self._heapify()
+    
+    def _heapify(self):
+        start = self._parent(len(self)-1) #start at parent of last leaf
+        for j in range(start, -1, -1): #going to and including the root
+            self._downheap(j)
 
     def __len__(self):
         return len(self._data)
