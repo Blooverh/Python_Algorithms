@@ -1,3 +1,4 @@
+from queue import Empty
 import PriorityQueue
 
 class Heap(PriorityQueue):
