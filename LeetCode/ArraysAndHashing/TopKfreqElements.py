@@ -5,31 +5,25 @@ from typing import List
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        if len(nums) == 1:
-            return [nums[0]]
         freq = {}
 
         for num in nums:
-            freq[num] = 1 + freq.get(num, 0)
+            if num not in freq:
+                freq[num] =1
+            else:
+                freq[num] += 1
 
-        sorted_vals= sorted(freq.values(), reverse= True)
-        sorted_dict={}
+        #dictionary where items of dictionary are sorted in reverse, so key with heighest value is first
+        freq = dict(sorted(freq.items(), key=lambda x: x[1], reverse=True)) #python built in method
 
-        for i in sorted_vals:
-            for k in freq.keys():
-                if freq[k] == i:
-                    sorted_dict[k] = freq[k]
+        result = list(freq.keys())[:k] #list of the first k keys from the dictionary which contain keys with heighest values
 
-        ans= [] 
-        for key in sorted_dict.keys():
-            if len(ans) < k-1:
-                ans.append(key)
-        return ans
+        return result
             
 
 
 sol= Solution()
-list= [3,0,1,0]
+l= [3,0,1,0]
 k=1
 
-print(sol.topKFrequent(list, k))
+print(sol.topKFrequent(l, k))
