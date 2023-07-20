@@ -13,7 +13,7 @@ class Solution:
         rightProd[len(nums) - 1]= 1 #since nums[-1] has nothing to the right of it we put 1
 
         for i in range (1, len(nums)):
-            leftProd[i] = leftProd[i-1] * nums 
+            leftProd[i] = leftProd[i-1] * nums[i-1]
 
             rightProd[len(nums)- i -1] = rightProd[len(nums)-i] * nums[len(nums)-i] #multiplies every element to the right of i
 
