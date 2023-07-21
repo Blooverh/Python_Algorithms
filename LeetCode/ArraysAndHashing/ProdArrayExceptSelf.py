@@ -20,7 +20,7 @@ class Solution:
         ans = [] #empty list that will contain the product
 
         for i in range(len(nums)): 
-            ans.append(leftProd[i] * rightProd[i]) #multiply noth arrays at the same index
+            ans.append(leftProd[i] * rightProd[i]) #multiply both arrays at the same index 
 
         return ans
             
