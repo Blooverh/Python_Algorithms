@@ -28,9 +28,9 @@ class Solution:
                 counter +=1
             elif sortedNums[i] - sortedNums[i-1] <= 0:
                 counter = counter
-            else:
+            elif sortedNums[i] - sortedNums[i-1] > 1:
                 counters.append(counter)
-                counter=0
+                counter=1
 
         
         counters.append(counter)
