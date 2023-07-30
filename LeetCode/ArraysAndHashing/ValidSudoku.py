@@ -37,6 +37,7 @@ class Solution:
 - After processing all the cells, the method checks if the length of res is equal to the 
     length of the set of res
 
+    !Note: SETS CANNOT HAVE DUPLICATE ELEMENTS HENCE WHY WE CHECK LEN(RES) AND LEN(SET(RES))
     Because different length on res and set(res) means that there are the same tuples in res.
     Moreover, we need to notice that tuples representing different groups are never equal 
     (since tuple for row is Tuple[int, str] type, tuple for column is Tuple[str, int] 
