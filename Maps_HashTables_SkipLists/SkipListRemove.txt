@@ -1,0 +1,16 @@
+def SkipListRemoval(k):
+
+    p =  SkipSearch(k)
+
+    if p != k:
+        raise KeyError("key does not exist" + repr(k))
+    else:
+        # while item at position p is not None delete instance and and all upward references
+        # while also connecting the ooother nodes between deleted node
+        while p is not None: 
+            del M[p] # delete Item
+            next(prev(p)) = next(p) # link nodes between deleted node
+
+            p = above(p) 
+        
+        
