@@ -209,3 +209,51 @@ class TreeMap(LinkedBinaryTree, MapBase): #Multiple inheritance
             self._rebalance_access(p)
         
         raise KeyError("Key Error: "+ repr(k))
+
+######### Search Tree Balacing Algorithms for (AVL, Splay Tree, RedBlack Trees) not used by this class, but implemented here for inheritance ######
+
+def _relink(self, parent, child, make_left_child):
+    """Relink aprent node with child node (we allow child to be None)"""
+
+    if make_left_child:
+        parent._left = child #make it a left child
+    else:
+        parent._right = child # make it a right child
+
+    if child is not None:
+        child._parent = parent # make child point to parent 
+
+def _rotate(self, p):
+    """rotate position p above its parent"""
+    x = p._node
+    y = x._parent #assume this exists
+    z= y._parent # grand parent 
+
+    if z is None:
+        self._root = x #x becomes root if grand parent z is None 
+        x._parent = None
+    else:
+        self._relink(z,x, y == z._left) # x becomes a direct child of z
+    
+    # now rotate x and y, including transfer of middle subtree
+    if x == y._left:
+        self._relink(y, x._right, True) # x._right becomes left child of y 
+        self._relink(x, y, False)
+    else:
+        self._relink(y, x._left, False) # x._left becomes right child of y
+        self._relink(x , y, True) # Y becomes left child of x
+
+def _restructure(self, x):
+    """Perform Trinode Restructuring of Position x with parent/grandparent"""
+
+    y= self.parent(x)
+    z = self.parent(y)
+
+    if (x == self.right(y)) == (y== self.right(z)): #matching alignments
+        self._rotate(y) #single rotation
+        return y # y is the new subtree root
+    else:
+        self._rotate(x) #double rotation
+        self._rotate(x)
+
+        return x
