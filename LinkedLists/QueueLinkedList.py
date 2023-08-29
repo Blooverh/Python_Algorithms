@@ -49,7 +49,7 @@ class LinkedQueue:
     
     def enqueue(self,e):
         """Add an element to back of the queue"""
-        newest=self._node(e, None) #newest node will have element e and pointer to Null before we add it to queue
+        newest=self._Node(e, None) #newest node will have element e and pointer to Null before we add it to queue
 
         """In case of whether the queue is empty or not where to put new node in queue"""
         if self._isEmpty():

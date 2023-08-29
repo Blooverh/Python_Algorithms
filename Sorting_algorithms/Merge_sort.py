@@ -32,3 +32,9 @@ def merge_sort(S):
     #merge results 
 
     merge(S1, S2, S) #merge sorter halves back into S
+
+    return S
+
+array = [85, 24, 63, 45, 17, 31, 96, 50]
+
+print(merge_sort(array))
