@@ -113,7 +113,7 @@ class Graph:
         vertex = self.Vertex(x)
         self._outgoing[vertex] = {} # new vertex will contain empty map of icidency
         if self.is_directed():
-            self._incoming[v] = {} # if directed graph 2 incidency maps are needed.
+            self._incoming[vertex] = {} # if directed graph 2 incidency maps are needed.
 
         return vertex 
     
