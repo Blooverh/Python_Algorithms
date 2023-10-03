@@ -122,3 +122,18 @@ class Graph:
         e = self.Edge(u, v, x)
         self._outgoing[u][v] = e
         self.incident_edges[v][u] = e 
+
+"""DFS Implementation"""
+def DFS(g, u, discovered):
+    """Perform DFS on the undiscovered portion of the graph g starting at vertex u
+    
+    discovered is a dictionary mapping each vertex to the edge that was used to 
+    discover it during thr DFS.
+    (u should be "discovered' prior to the call.)
+    Newly discovered vertices will be added to the dictionary as a result"""
+
+    for e in g.incident_edges(u): # for every outgoing edge from u
+        v= e.opposite(u)
+        if v not in discovered: # v is an unvisted vertex
+            discovered[v] = e # e is the tree edge that discovered v
+            DFS(g, v, discovered) #recursively explore from v
